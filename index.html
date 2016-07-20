@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+  <style>
+    #map { height:300px; width:100%; }
+  </style>
+</head>
+<body  ng-controller="customerController">
+  <div id='map'>000</div>
+  <div class="container-fluid">
+    <h1>Sample app</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Morbi tempus dolor at ligula sagittis iaculis. Ut et tortor eu
+      nulla porta ultricies. Integer nec sagittis quam. Suspendisse at
+      nunc et arcu laoreet pellentesque. Aliquam mattis tempus ipsum sit
+      amet varius. Ut eu magna lobortis sapien blandit feugiat in nec mi.
+    </p>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Search Customer</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Search Customer" ng-model="customer">
+  </div>
+
+  </div>
+  <div class="container-fluid">
+    <table class="table">
+      <tr ng-repeat="item in data | filter: customer">
+        <td>
+          <h5>{{item.Name}}</h5>
+        </td>
+        <td>
+          <p>{{item.City}}</p>
+        </td>
+        <td>
+          <p><strong>{{item.Country}}</strong></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "sample app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . sampleApp",
+    "dist": "npm run dist:mac && npm run dist:win32 && npm run dist:win64",
+    "dist:mac": "build --platform darwin",
+    "dist:win32": "build --platform win32 --arch ia32",
+    "dist:win64": "build --platform win32 --arch x64"
+  },
+  "author": "leojavier <leojavier@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "electron-prebuilt": "^1.2.7"
+  },
+  "build": {
+    "app-bundle-id": "hr.creaticon.eatodo",
+    "app-category-type": "public.app-category.productivity",
+    "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico",
+    "osx": {},
+    "win": {}
+  },
+  "devDependencies": {
+    "electron-builder": "^5.12.1"
+  }
+}
